@@ -36,7 +36,7 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 100.11 seconds
 ```
 ## port 80
-![[Screenshot_2025-03-31_08_56_55.png]]Here we have the default page of apache 2.
+![][Screenshot_2025-03-31_08_56_55.png]Here we have the default page of apache 2.
 ## port 161 (snmp)
 At first I didn't really know what this service was, and after doing some research I discovered that it is a standard protocol for managing and monitoring network devices such as routers, switches, servers, printers and other connected devices.
 We can number this service through this tool: **snmpbulkwalk**
