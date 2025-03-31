@@ -267,4 +267,4 @@ Bingo we're in!
 This machine was both simple and fun, in fact I especially enjoyed the privilege escalation.
 I have to say I would do it again!
 
-![[Screenshot_2025-03-31_09_37_41.png]]
+![](Screenshot_2025-03-31_09_37_41.png)
