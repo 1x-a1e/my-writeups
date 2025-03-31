@@ -2,6 +2,7 @@
 
 ```
 >> nmap -sC -sV 10.10.x.x
+
 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 23:55 CEST
 Nmap scan report for 10.10.x.x
 Host is up (0.037s latency).
@@ -24,7 +25,8 @@ Nmap done: 1 IP address (1 host up) scanned in 8.96 seconds
 ```
 
 ```
->> nmap -sU 10.10.x.x -T5                                                                                                                  ⏎
+>> nmap -sU 10.10.x.x -T5
+                                                                                                          ⏎
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-12-22 12:50 CST
 Warning: 10.10.x.x giving up on port because retransmission cap hit (2).
 Nmap scan report for underpass.htb (10.10.11.48)
@@ -42,7 +44,8 @@ At first I didn't really know what this service was, and after doing some resear
 We can number this service through this tool: **snmpbulkwalk**
 
 ```
->> snmpbulkwalk 10.10.X.X -v2c -Os -c public 
+>> snmpbulkwalk 10.10.X.X -v2c -Os -c public
+
 iso.3.6.1.2.1.1.1.0 = STRING: "Linux underpass 5.15.0-126-generic #136-Ubuntu SMP Wed Nov 6 10:38:22 UTC 2024 x86_64"
 iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.8072.3.2.10
 iso.3.6.1.2.1.1.3.0 = Timeticks: (86566) 0:14:25.66
@@ -101,7 +104,8 @@ I wondered, maybe if we insert the name of the service we can manage to make a n
 And with dirsearch I tried
 
 ```
->> dirsearch -u http://10.10.11.48/daloradius/                                                                   
+>> dirsearch -u http://10.10.11.48/daloradius/
+...                                                                   
 [09:13:13] 200 -  221B  - /daloradius/.gitignore                            
 [09:13:26] 301 -  319B  - /daloradius/app  ->  http://10.10.11.48/daloradius/app/
 [09:13:29] 200 -   24KB - /daloradius/ChangeLog                             
@@ -111,7 +115,8 @@ And with dirsearch I tried
 [09:13:41] 301 -  323B  - /daloradius/library  ->  http://10.10.11.48/daloradius/library/
 [09:13:41] 200 -   18KB - /daloradius/LICENSE                               
 [09:13:51] 200 -   10KB - /daloradius/README.md                             
-[09:13:53] 301 -  321B  - /daloradius/setup  ->  http://10.10.11.48/daloradius/setup/    
+[09:13:53] 301 -  321B  - /daloradius/setup  ->  http://10.10.11.48/daloradius/setup/
+...  
 ```
 thinking about it the **app** directory was also present on their repo so logically every directory that is on the service will also be on the repo.
 I tried the following addresses:
@@ -139,6 +144,7 @@ Okay this is getting funny, now what? trying and thinking I opted to try to acce
 
 ```
 >> ssh svcMosh@underpass.htb
+
 Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 5.15.0-126-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
@@ -178,6 +184,7 @@ Let's see if **sudo -l** gives us something
 
 ```
 svcMosh@underpass:~$ sudo -l
+
 Matching Defaults entries for svcMosh on localhost:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
 
