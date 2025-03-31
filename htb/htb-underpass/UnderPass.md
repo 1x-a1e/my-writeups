@@ -122,16 +122,16 @@ I tried the following addresses:
 I tried all the addresses and one in particular worked, in fact doing a search the default credentials of daloradius are: administrator/radius
 Trying these credentials I found success on the login of http://10.10.x.x/daloradius/app/operators/login.php.
 
-![[Screenshot_2025-03-31_09_20_26.png]]
+![](Screenshot_2025-03-31_09_20_26.png)
 
 By clicking on the user list I found an available user:
 
-![[Screenshot_2025-03-31_09_22_15.png]]
+![](Screenshot_2025-03-31_09_22_15.png)
 
 Seeing if the password is a known password I try before using a cracking tool I try to use a site that works well for cracking hashes, this is https://crackstation.net/
 I copy and paste the hash and see what it gives me:
 
-![[Screenshot_2025-03-31_09_24_13.png]]
+![](Screenshot_2025-03-31_09_24_13.png)
 
 It returned the following password: underwaterfriends
 
